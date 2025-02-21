@@ -1,13 +1,13 @@
 <script lang="ts">
   import { page } from '$app/state';
-  import logo from '$lib/images/svelte-logo.svg';
   import github from '$lib/images/github.svg';
+  import Wallet from './Wallet.svelte';
 </script>
 
 <header>
   <div class="corner">
-    <a href="https://svelte.dev/docs/kit">
-      <img src={logo} alt="SvelteKit" />
+    <a href="https://github.com/khatna">
+      <img src={github} alt="GitHub" />
     </a>
   </div>
 
@@ -17,13 +17,10 @@
     </svg>
     <ul>
       <li aria-current={page.url.pathname === '/' ? 'page' : undefined}>
-        <a href="/">Home</a>
+        <a href="/">Markets</a>
       </li>
       <li aria-current={page.url.pathname === '/about' ? 'page' : undefined}>
         <a href="/about">About</a>
-      </li>
-      <li aria-current={page.url.pathname.startsWith('/sverdle') ? 'page' : undefined}>
-        <a href="/sverdle">Sverdle</a>
       </li>
     </ul>
     <svg viewBox="0 0 2 3" aria-hidden="true">
@@ -32,9 +29,7 @@
   </nav>
 
   <div class="corner">
-    <a href="https://github.com/sveltejs/kit">
-      <img src={github} alt="GitHub" />
-    </a>
+    <Wallet />
   </div>
 </header>
 
@@ -66,7 +61,7 @@
   nav {
     display: flex;
     justify-content: center;
-    --background: rgba(255, 255, 255, 0.7);
+    --background: rgba(50, 50, 50, 0.7);
   }
 
   svg {
