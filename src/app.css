@@ -6,10 +6,9 @@
     'Open Sans', 'Helvetica Neue', sans-serif;
   --font-mono: 'Fira Mono', monospace;
   --color-bg-0: rgb(0, 0, 0);
-  --color-bg-1: rgb(20, 20, 20);
-  --color-bg-2: rgb(30,30, 30);
+  --color-bg-1: rgba(50, 50, 50, 0.7);
   --color-theme-1: rgb(0, 177, 114);
-  --color-theme-2: #4075a6;
+  --color-theme-2: rgb(242, 87, 86);
   --color-text: rgba(255, 255, 255, 0.8);
   --column-width: 42rem;
   --column-margin-top: 4rem;
@@ -21,7 +20,7 @@ body {
   min-height: 100vh;
   margin: 0;
   background-attachment: fixed;
-  background-color: var(--color-bg-1);
+  background-color: var(--color-bg-0);
   background-size: 100vw 100vh;
 }
 

@@ -2,30 +2,42 @@
   import { Chart } from 'svelte-echarts';
   import { init, use } from 'echarts/core';
   import { LineChart } from 'echarts/charts';
-  import { TitleComponent, TooltipComponent } from 'echarts/components';
+  import { TitleComponent, GridComponent, TooltipComponent } from 'echarts/components';
   import { SVGRenderer } from 'echarts/renderers';
   import type { EChartsOption } from 'echarts';
 
   // let { title: marketName = 'Market Name' } = $props();
 
-  use([LineChart, SVGRenderer, TooltipComponent, TitleComponent]);
+  let { class: className } = $props();
+
+  const priceFormatter = (val: number | string) => `${Math.floor(Number(val) * 100)}¢`;
+
+  use([LineChart, SVGRenderer, TooltipComponent, GridComponent, TitleComponent]);
 
   let options: EChartsOption = {
+    grid: {
+      top: 20,
+      bottom: 20,
+      left: 40,
+      right: 20,
+    },
     xAxis: {
       type: 'category',
       data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
       axisTick: { show: false },
-      axisLabel: { interval: 5 },
+      axisLabel: { interval: 5 }
     },
     yAxis: {
       type: 'value',
       max: 1,
       interval: 0.5,
       splitLine: { show: false },
-      axisLine: { show: true},
+      axisLine: { show: true },
+      axisLabel: { formatter: priceFormatter }
     },
     tooltip: {
-      show: true,
+      trigger: 'axis',
+      axisPointer: { type: 'line' },
     },
     series: [
       {
@@ -33,20 +45,14 @@
         smooth: true,
         areaStyle: { color: 'rgba(0, 177, 114, 0.8)' },
         lineStyle: { width: 3, color: 'rgb(0, 177, 114)' },
-        data: [0.5, 0.5, 0.45, 0.42, 0.66, 0.70],
-        showSymbol: false,
+        itemStyle: { color: 'rgb(0, 177, 114)' },
+        data: [0.5, 0.5, 0.45, 0.42, 0.66, 0.7],
+        showSymbol: false
       }
     ]
   };
 </script>
 
-<div class="chart">
+<div class="chart my-2 w-full v-full {className}">
   <Chart {init} {options} />
 </div>
-
-<style>
-  .chart {
-    width: 500px;
-    height: 300px;
-  }
-</style>
