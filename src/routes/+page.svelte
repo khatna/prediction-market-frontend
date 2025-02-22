@@ -10,13 +10,11 @@
 <section>
   <Chart />
   <Chart />
-  <Chart />
 </section>
 
 <style>
   section {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     flex: 0.5;
