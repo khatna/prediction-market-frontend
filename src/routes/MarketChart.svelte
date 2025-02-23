@@ -6,13 +6,13 @@
   import { SVGRenderer } from 'echarts/renderers';
   import type { EChartsOption } from 'echarts';
 
-  let { class: className, history }: { class: string; history: MarketData['history'] } = $props();
-
   const formatter = (val: number | string) => `${Math.floor(Number(val) * 100)}%`;
+
+  let { class: className, history }: { class: string; history: MarketData['history'] } = $props();
 
   use([LineChart, SVGRenderer, TooltipComponent, GridComponent, TitleComponent]);
 
-  let options: EChartsOption = {
+  let options: EChartsOption = $derived({
     grid: {
       top: 20,
       bottom: 20,
@@ -54,7 +54,7 @@
         showSymbol: false
       }
     ]
-  };
+  });
 </script>
 
 <div class="chart v-full my-2 w-full {className}">

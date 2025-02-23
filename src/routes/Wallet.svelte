@@ -27,7 +27,7 @@
     if (isOpen && !event.target.closest('.wallet-container')) {
       isOpen = false;
     }
-  }
+  };
 </script>
 
 <svelte:window on:click={handleClickOutside} />

@@ -23,9 +23,10 @@
     <div
       class="m-6 {market.probability >= 0.5
         ? 'bg-[var(--color-theme-1)]'
-        : 'bg-[var(--color-theme-2)]'} px-4 py-2 text-center font-[900]"
+        : 'bg-[var(--color-theme-2)]'} my-2 px-4 py-1 text-center font-[900]"
     >
       {Math.floor(market.probability * 100)}% Chance
     </div>
+    <p class="mb-2 text-center font-light">Trading volume: ${market.volume.toFixed(2)}</p>
   </div>
 </div>
