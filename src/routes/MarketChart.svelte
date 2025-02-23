@@ -6,7 +6,7 @@
   import { SVGRenderer } from 'echarts/renderers';
   import type { EChartsOption } from 'echarts';
 
-  let { class: className } = $props();
+  let { class: className, history }: { class: string; history: MarketData['history'] } = $props();
 
   const formatter = (val: number | string) => `${Math.floor(Number(val) * 100)}%`;
 
@@ -20,10 +20,16 @@
       right: 20
     },
     xAxis: {
-      type: 'category',
-      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-      axisTick: { show: false },
-      axisLabel: { interval: 5 }
+      type: 'time',
+      axisLabel: {
+        formatter: (value, index) => {
+          const date = new Date(value);
+          if (index === 0 || index === history.length - 1) {
+            return date.toISOString().split('T')[0];
+          }
+          return '';
+        }
+      }
     },
     yAxis: {
       type: 'value',
@@ -44,7 +50,7 @@
         areaStyle: { color: 'rgba(0, 177, 114, 0.8)' },
         lineStyle: { width: 3, color: 'rgb(0, 177, 114)' },
         itemStyle: { color: 'rgb(0, 177, 114)' },
-        data: [0.5, 0.5, 0.45, 0.42, 0.66, 0.7],
+        data: history,
         showSymbol: false
       }
     ]

@@ -16,7 +16,10 @@
         {market.question}
       </p>
     </div>
-    <MarketChart class="flex flex-1 items-center justify-center px-2 sm:px-4 lg:pb-2" />
+    <MarketChart
+      class="flex flex-1 items-center justify-center px-2 sm:px-4 lg:pb-2"
+      history={market.history}
+    />
     <div
       class="m-6 {market.probability >= 0.5
         ? 'bg-[var(--color-theme-1)]'
