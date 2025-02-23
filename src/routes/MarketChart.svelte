@@ -50,7 +50,7 @@
         areaStyle: { color: 'rgba(0, 177, 114, 0.8)' },
         lineStyle: { width: 3, color: 'rgb(0, 177, 114)' },
         itemStyle: { color: 'rgb(0, 177, 114)' },
-        data: history,
+        data: history.slice(Math.max(-100, -history.length), -1),
         showSymbol: false
       }
     ]
