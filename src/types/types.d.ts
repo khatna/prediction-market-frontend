@@ -9,7 +9,7 @@ interface MarketData {
 
 interface BetRequest {
   market_id: string;
-  is_yes: string;
+  is_yes: boolean;
   stake: number;
 }
 

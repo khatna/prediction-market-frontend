@@ -37,6 +37,7 @@
     "vite": "^6.0.0"
   },
   "dependencies": {
+    "@zerodevx/svelte-toast": "^0.9.6",
     "echarts": "^5.6.0",
     "svelte-echarts": "^1.0.0-rc3"
   }

@@ -1,7 +1,6 @@
 <script lang="ts">
   import { page } from '$app/state';
   import github from '$lib/images/github.svg';
-  import Wallet from './Wallet.svelte';
 </script>
 
 <header>
@@ -28,9 +27,7 @@
     </svg>
   </nav>
 
-  <div class="corner">
-    <Wallet />
-  </div>
+  <br/>
 </header>
 
 <style>

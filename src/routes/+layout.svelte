@@ -1,7 +1,7 @@
 <script lang="ts">
+  import { SvelteToast } from '@zerodevx/svelte-toast'
   import Header from './Header.svelte';
   import '../app.css';
-
   let { children } = $props();
 </script>
 
@@ -27,6 +27,7 @@
     </p>
   </footer>
 </div>
+<SvelteToast />
 
 <style>
   .app {
