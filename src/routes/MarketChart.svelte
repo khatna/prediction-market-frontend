@@ -50,7 +50,10 @@
         areaStyle: { color: 'rgba(0, 177, 114, 0.8)' },
         lineStyle: { width: 3, color: 'rgb(0, 177, 114)' },
         itemStyle: { color: 'rgb(0, 177, 114)' },
-        data: history.slice(Math.max(-100, -history.length), -1),
+        data:
+          history.length > 100
+            ? history.filter((_, i) => i % Math.floor(history.length / 100) === 0) // get every 100th data point
+            : history,
         showSymbol: false
       }
     ]
