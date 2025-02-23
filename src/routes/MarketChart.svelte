@@ -6,11 +6,9 @@
   import { SVGRenderer } from 'echarts/renderers';
   import type { EChartsOption } from 'echarts';
 
-  // let { title: marketName = 'Market Name' } = $props();
-
   let { class: className } = $props();
 
-  const priceFormatter = (val: number | string) => `${Math.floor(Number(val) * 100)}¢`;
+  const formatter = (val: number | string) => `${Math.floor(Number(val) * 100)}%`;
 
   use([LineChart, SVGRenderer, TooltipComponent, GridComponent, TitleComponent]);
 
@@ -19,7 +17,7 @@
       top: 20,
       bottom: 20,
       left: 40,
-      right: 20,
+      right: 20
     },
     xAxis: {
       type: 'category',
@@ -33,11 +31,11 @@
       interval: 0.5,
       splitLine: { show: false },
       axisLine: { show: true },
-      axisLabel: { formatter: priceFormatter }
+      axisLabel: { formatter }
     },
     tooltip: {
       trigger: 'axis',
-      axisPointer: { type: 'line' },
+      axisPointer: { type: 'line' }
     },
     series: [
       {
@@ -53,6 +51,6 @@
   };
 </script>
 
-<div class="chart my-2 w-full v-full {className}">
+<div class="chart v-full my-2 w-full {className}">
   <Chart {init} {options} />
 </div>
