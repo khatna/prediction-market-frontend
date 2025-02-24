@@ -4,7 +4,7 @@
 
 Install `node` and `yarn`
 
-Make sure the `PUBLIC_SERVER_HOST` environment variable is either set to a local host running
+Make sure the `PUBLIC_SERVER_HOST` environment variable is set to a local host running
 the [backend API](https://www.github.com/khatna/prediction-market-backend).
 
 ## Running the app
