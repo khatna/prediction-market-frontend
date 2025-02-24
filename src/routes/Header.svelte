@@ -27,7 +27,7 @@
     </svg>
   </nav>
 
-  <br/>
+  <br />
 </header>
 
 <style>

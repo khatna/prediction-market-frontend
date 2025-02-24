@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { SvelteToast } from '@zerodevx/svelte-toast'
+  import { SvelteToast } from '@zerodevx/svelte-toast';
   import Header from './Header.svelte';
   import '../app.css';
   let { children } = $props();

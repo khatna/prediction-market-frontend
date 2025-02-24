@@ -18,15 +18,15 @@
       Bet on simulated prediction markets
     </p>
     <div class="mt-10 grid gap-4 sm:mt-16 sm:grid-cols-2 lg:grid-cols-4">
-      {#await data.markets}
-        Loading Markets...
-      {:then markets}
-        {#each markets as market}
-          <MarketCard {market} />
+      {#if data.markets}
+        {#each data.markets as market}
+        <MarketCard {market} />
         {/each}
-      {:catch error}
+      {:else if data.error}
         <p>Error loading markets.</p>
-      {/await}
+      {:else}
+        Loading Markets...
+      {/if}
     </div>
   </div>
 </section>
