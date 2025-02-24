@@ -16,13 +16,13 @@ npx sv create my-app
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Once you've created a project and installed dependencies with `yarn`, start a development server:
 
 ```bash
-npm run dev
+yarn run dev
 
 # or start the server and open the app in a new browser tab
-npm run dev -- --open
+yarn run dev -- --open
 ```
 
 ## Building
@@ -30,9 +30,11 @@ npm run dev -- --open
 To create a production version of your app:
 
 ```bash
-npm run build
+yarn run build
 ```
 
 You can preview the production build with `npm run preview`.
+
+Make sure the `PUBLIC_SERVER_HOST` environment variable is set to the host of the server running the backend API.
 
 > To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
