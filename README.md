@@ -1,40 +1,29 @@
-# sv
+# Prediction Market Frontend
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+## Requirements
 
-## Creating a project
+Install `node` and `yarn`
 
-If you're seeing this, you've probably already done this step. Congrats!
+Make sure the `PUBLIC_SERVER_HOST` environment variable is either set to a local host running
+the [backend API](https://www.github.com/khatna/prediction-market-backend).
 
-```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
-
-## Developing
+## Running the app
 
 Once you've created a project and installed dependencies with `yarn`, start a development server:
 
 ```bash
-yarn run dev
+yarn dev
 
 # or start the server and open the app in a new browser tab
-yarn run dev -- --open
+yarn dev -- --open
 ```
 
 ## Building
 
-To create a production version of your app:
+To create a production version:
 
 ```bash
-yarn run build
+yarn build
 ```
 
-You can preview the production build with `npm run preview`.
-
-Make sure the `PUBLIC_SERVER_HOST` environment variable is set to the host of the server running the backend API.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+You can preview the production build with `yarn preview`.
